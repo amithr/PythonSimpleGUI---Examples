@@ -18,7 +18,7 @@ layout = [[sg.Text("Enter full name:"), sg.Input(key='-NAME-', do_not_clear=True
 
 window = sg.Window('привет Airlines', layout)
 
-def formatInputInformation(values):
+def format_input_information(values):
     information = "Flight booked!"
     name = '\nName: ' + values['-NAME-']
     information += name
@@ -47,7 +47,6 @@ while True:
     if event in (sg.WIN_CLOSED, 'Exit'):
         break
     elif event == 'Reserve Ticket':
-
-        sg.popup(formatInputInformation(values))
+        sg.popup(format_input_information(values))
 window.close()
 

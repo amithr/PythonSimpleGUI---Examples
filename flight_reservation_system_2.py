@@ -20,7 +20,7 @@ layout = [[sg.Text("Enter full name:"), sg.Input(key='-NAME-', do_not_clear=True
 reservations_array = []
 
 
-def formatInputInformation(values):
+def format_input_information(values):
     information = ""
     name = ' , Name: ' + values['-NAME-']
     information += name
@@ -42,8 +42,8 @@ def formatInputInformation(values):
     
     return information
 
-def storeInformationInArray(values, reservations_array):
-    reservations_array.append(formatInputInformation(values))
+def store_information_in_array(values, reservations_array):
+    reservations_array.append(format_input_information(values))
 
 def reservations_window(reservations_array):
     # Layout is here because it must be "new" every time you open the window.
@@ -67,7 +67,7 @@ while True:
     if event in (sg.WIN_CLOSED, 'Exit'):
         break
     elif event == 'Reserve Ticket':
-        storeInformationInArray(values, reservations_array)
+        store_information_in_array(values, reservations_array)
         sg.popup(formatInputInformation(values))
     elif event == 'See Reservations':
         reservations_window(reservations_array)
