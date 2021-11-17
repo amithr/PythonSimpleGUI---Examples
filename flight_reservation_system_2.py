@@ -60,7 +60,7 @@ def reservations_window(reservations_array):
 
 
 
-window = sg.Window('привет Airlines', layout)
+window = sg.Window('привет Airlines', layout, size=(300, 300))
 
 while True:
     event, values = window.read()
@@ -68,7 +68,7 @@ while True:
         break
     elif event == 'Reserve Ticket':
         store_information_in_array(values, reservations_array)
-        sg.popup(formatInputInformation(values))
+        sg.popup(format_input_information(values))
     elif event == 'See Reservations':
         reservations_window(reservations_array)
 

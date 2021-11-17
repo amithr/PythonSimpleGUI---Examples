@@ -6,7 +6,7 @@ sg.change_look_and_feel('DarkAmber')
 
 layout = [[sg.Text("Enter mass in kilograms"), sg.Input(key='-MASS-', do_not_clear=True, size=(5, 1))],
           [sg.Text("Enter velocity in kilometers per hour"), sg.Input(key='-VELOCITY-', do_not_clear=True, size=(5, 1))],
-          [sg.Text("Enter radios in meters"), sg.Input(key='-RADIUS-', do_not_clear=True, size=(5, 1))],
+          [sg.Text("Enter radius in meters"), sg.Input(key='-RADIUS-', do_not_clear=True, size=(5, 1))],
           [sg.Text(size=(10, 1), justification='right', key='-OUT-CALCULATION-'),
            sg.Text(' Newtons')],
           [sg.Button('Calculate', bind_return_key=True), sg.Button('Quit')]
