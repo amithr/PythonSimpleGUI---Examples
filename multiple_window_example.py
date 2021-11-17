@@ -5,7 +5,7 @@ sg.change_look_and_feel('DarkAmber')
 
 layout = [[sg.Text("Enter radius in centimeters"), sg.Input(key='-RADIUS-', do_not_clear=True, size=(5, 1))],
           [sg.Text(size=(20, 1), justification='right', key='-OUT-CALCULATION-'),
-           sg.Text(' centimeters squared')],
+           sg.Text(' centimeters cubed')],
           [sg.Button('Calculate Volume'), sg.Button('Calculate Area'), sg.Button('Quit')]
 ]
 
@@ -19,7 +19,7 @@ def calculate_area_window():
 
     while True:
         event, values = calculate_area_window.read()
-        if event == "Quit":
+        if event in (sg.WIN_CLOSED, 'Quit'):
             break
         elif event == "Calculate Area":
             float_radius = float(values['-RADIUS-'])
@@ -38,7 +38,6 @@ while True:
     elif event == 'Calculate Volume':
         radius = float(values['-RADIUS-'])
         volume = (4/3)*math.pi*(radius**3)
-        print(volume)
         window['-OUT-CALCULATION-'].Update(volume)
     elif event == 'Calculate Area':
         calculate_area_window()
